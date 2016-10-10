@@ -1,0 +1,66 @@
+<!Doctype HTML>
+<html>
+	<head>
+		<meta charset ="UTF-8">
+		<title>index</title>
+		<link href="tpStyle.css" rel="stylesheet" type="text/css">
+		<script src ="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" ></script>
+		<script type = "text/JavaScript" src = "jquery.js"></script>
+		<script type = "text/JavaScript" src = "stopwatch.js"></script>
+		<script type = "text/JavaScript" src = "cobaRandom.js"></script>
+	</head>
+	<body onload="loadSleeve();showTime();">
+		<div id="transitionScreen">
+			<div id="welcome">
+				FAIZAL &amp; RADIT PROJECT
+			</div>
+			<div id="project" style="display:none">
+				AYO TEBAK GAMBAR !!
+			</div>
+		</div>
+		<div id="login">
+			<div class="loginBox">
+				<p class="loginProp">Username : </p>
+				<input id="username" class="loginProp" type="text" name="username"></input>
+				<br/>
+				<p class="loginProp">Password  : </p>
+				<input id="password" class="loginProp" type="password" name="password"></input>
+				<button class="loginButton" onclick="loginChecker()">Login</button>
+			</div>
+		</div>
+		<div id="home">
+			<button id="gameButton">Play Game</button>
+			<button id="gameButton">Credit</button>
+		</div>
+		<div id="game">
+			<button id="backButton">Back</button>
+			<h1>Guess the right pict !</h1>
+			<div class="frame">
+				<div class="menu">
+				</div>
+				<div id="flex-container">
+				</div>
+				<div class="scoreBoard">
+				</div>
+			</div>
+			<div class="timer">
+				<div>Username : <span id="user"></span></div>
+				<div>Time: <span id="time"></span></div>
+			</div>
+			<div class="start">
+				<input id="gameStart" type="button" value="start">
+			</div>
+			<div class="rankBoard">
+				<h3>Rank Board</h3>
+				<ol id="rank">
+				</ol>
+				<button id="clear" onclick="clearHistory()">Clear History</button> 
+			</div>
+		</div>
+		<div id="credit" style="display:none">
+			<button id="backButton">Back</button>
+			<p>Website ini dibuat untuk tugas PPW 2.</p>
+			<p>Oleh Faizal Adhitama Prabowo dan Raditya Naufal</p>
+		</div>
+	</body>
+</html>

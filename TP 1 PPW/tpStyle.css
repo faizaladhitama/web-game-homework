@@ -1,0 +1,121 @@
+#welcome, #project{
+	color:white;
+	font-family:verdana;
+	font-size:60px;
+	text-align:center;
+	position:relative;
+	top:180px;
+}
+#transitionScreen{
+	background-color:black;
+	width:500px;
+	height:500px;
+	margin:auto;
+}
+#game{
+	display:none;
+}
+
+.menu{
+	float:left;
+	background-color:green;
+	height:300px;
+	width:100px;
+}
+.scoreBoard{
+	float:right;
+	top:-300px;
+	position:relative;
+	background-color:black;
+	height:300px;
+	width:100px;
+}
+.frame{
+	margin:auto;
+	width:500px;
+	height:500px;
+	background-color:yellow;
+}
+#flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 500px;
+    height:500px;
+    background-color: lightgrey;
+}
+
+.close{
+	background-image:url("cardSleeve.png");
+}
+.open{
+	background-image:url("senyum.jpg");
+}
+
+img{
+	background-position:center;
+	background-size:cover;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+p{
+	white-space:pre;
+}
+.rankBoard{
+	position:relative;
+	display:block;
+	float:right;
+	top:-340px;
+	left:260px;
+}
+
+ul li{
+	//list-style-type:none;
+	list-style-position:outside;
+}
+
+#loginBox{
+	padding:10px;
+	margin:5px;
+}
+
+.loginProp{
+	padding:5px;
+	margin:2px;
+	border-radius:5px;
+	display:inline;
+}
+
+.loginProp #password{
+	display:block;
+}
+
+.loginButton{
+	position:relative;
+	left:197px;
+}
+
+#login{
+	position:absolute;
+	margin:auto;
+	width:500px;
+	height:500px;
+	background-color:blue;
+	top:80px;
+	left:235px;
+	z-index:1;
+	border-radius: 5px;
+	display:none;
+}
+.loginBox{
+	margin:auto;
+	position:relative;
+	top:70px;
+	background-color:yellow;
+	width:255px;
+	padding:30px;
+	border-radius: 10px;
+}
