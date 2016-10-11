@@ -7,7 +7,7 @@
 		<script src ="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" ></script>
 		<script type = "text/JavaScript" src = "jquery.js"></script>
 		<script type = "text/JavaScript" src = "stopwatch.js"></script>
-		<script type = "text/JavaScript" src = "cobaRandom.js"></script>
+		<script type = "text/JavaScript" src = "javascript.js"></script>
 	</head>
 	<body onload="loadSleeve();showTime();">
 		<div id="transitionScreen">
@@ -31,11 +31,11 @@
 		<div id="home" style="display:none">
 			<div id="buttonHome">
 				<button id="playGame" onclick="playGame();">Play Game</button>
-				<button id="credit">Credit</button>
+				<button id="credit" onclick="openCredit()">Credit</button>
 			</div>
 		</div>
 		<div id="game" style="display:none">
-			<button id="backButton">Back</button>
+			<button id="backButton" onclick="back();">Back</button>
 			<h1>Guess the right pict !</h1>
 			<div class="frame">
 				<div id="flex-container">
@@ -55,10 +55,10 @@
 				<button id="clear" onclick="clearHistory()">Clear History</button> 
 			</div>
 		</div>
-		<div id="credit" style="display:none">
-			<button id="backButton">Back</button>
+		<div id="creditPage">
+			<button id="backButton" onclick="back();">Back</button>
 			<p>Website ini dibuat untuk tugas PPW 2.</p>
-			<p>Oleh Faizal Adhitama Prabowo dan Raditya Naufal</p>
+			<p>Oleh Faizal dan Raditya </p>
 		</div>
 	</body>
 </html>

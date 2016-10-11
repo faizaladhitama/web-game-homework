@@ -35,15 +35,16 @@
     cursor: pointer;
 }
 
-#playGame{
+#playGame, #credit{
 	width:200px;
 	height:80px;
 	display:block;
 }
 
-#credit{
+#creditPage{
 	width:200px;
 	height:80px;
+	display:none;
 }
 
 .frame{

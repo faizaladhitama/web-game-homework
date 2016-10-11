@@ -1,83 +1,110 @@
-var images = [];
+var randomItem = function(){
+	var lebar = 4;
+	var panjang = 4;
+	var total = lebar*panjang/2;
+	var item = [];
 
-// get images, place them in an array & randomize the order
-for (var i = 0; i < 8; i++) { 
-  var rand = Math.floor(Math.random() * (1200 - 900 + 1) + 900); 
-  var img = 'http://lolcat.com/images/lolcats/' + rand + '.jpg';
-  images.push(img);
-  images.push(img);
+	for(var i =0; i < total;i++){
+		item.push(i);
+		item.push(i);
+	}
+	//var item = [0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7];
+	var newArray = [];
+	while(item.length > 0){
+		var pushedItem = item[Math.floor(Math.random()*item.length)];
+		newArray.push(pushedItem);
+		var index = item.indexOf(pushedItem);
+		var deleted = item.splice(index, 1);
+	}
+	return newArray;
 }
-randomizeImages();
 
-// output images then hide them
-var output = "<ol>"; 
-for (var i = 0; i < 16; i++) { 
-  output += "<li>";
-  output += "<img src = '" + images[i] + "'/>";
-  output += "</li>";
+var loadImage = function(array){
+	var output = "";
+	while(array.length > 0){
+		var loadItem = array[Math.floor(Math.random()*array.length)];
+		var imageContainer = document.getElementById("flex-container");
+		if(imageContainer !=null){
+			var output = output + "<img id='emo" + loadItem +".jpg'"+ "src='cardSleeve.png'></div>";
+			document.getElementById("flex-container").innerHTML = output;
+		}
+		var index = array.indexOf(loadItem);
+		var deleted = array.splice(index, 1);
+	}
 }
-output += "</ol>";
-if(document.getElementById("container") !=null){
-  document.getElementById("container").innerHTML = output;
+
+var loadSleeve = function(){
+	var output = "";
+	for(var i = 0; i < 16;i++){
+		var imageContainer = document.getElementById("flex-container");
+		if(imageContainer !=null){
+			var output = output + "<img src=\"cardSleeve.png\"></div>";
+			document.getElementById("flex-container").innerHTML = output;
+		}
+	}
 }
-$("img").hide();
 
-var guess1 = "";
-var guess2 = "";
-var count = 0;
+var loginChecker = function(){
+	var usernameValue = document.getElementById("username").value;
+	var passwordValue = document.getElementById("password").value
 
-$("li").click(function() {
-  if ((count < 2) &&  ($(this).children("img").hasClass("face-up")) === false) {
-    
-    // increment guess count, show image, mark it as face up
-    count++;
-    $(this).children("img").show();
-    $(this).children("img").addClass("face-up");
-    
-    //guess #1
-    if (count === 1 ) { 
-      guess1 = $(this).children("img").attr("src"); 
-    }   
-    
-    //guess #2
-    else { 
-      guess2 = $(this).children("img").attr("src"); 
-      
-      // since it's the 2nd guess check for match
-      if (guess1 === guess2) { 
-        console.log("match");
-        $("li").children("img[src='" + guess2 + "']").addClass("match");
-      } 
-      
-      // else it's a miss
-      else { 
-        console.log("miss");
-        setTimeout(function() {
-          $("img").not(".match").hide();
-          $("img").not(".match").removeClass("face-up");
-        }, 1000);
-      }
-      
-      // reset
-      count = 0; 
-      setTimeout(function() { console.clear(); }, 60000);      
-    }
-  }
-});
+	var xmlhttp;
+	var output = "";
+	if(window.XMLHttpRequest){
+		xmlhttp = new XMLHttpRequest();
+	}
+	else{
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
 
-// randomize array of images
-function randomizeImages(){
-  Array.prototype.randomize = function()
-  {
-    var i = this.length, j, temp;
-    while ( --i )
-    {
-      j = Math.floor( Math.random() * (i - 1) );
-      temp = this[i];
-      this[i] = this[j];
-      this[j] = temp;
-    }
-  };
-  
-  images.randomize();
+	xmlhttp.onreadystatechange = function(){
+		if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+			var userData = JSON.parse(xmlhttp.responseText);
+			var users = userData.users;
+			for(var i = 0; i < users.length;i++){
+				var user = users[i];
+				var name = user.username;
+				var password = user.password;
+
+				if(usernameValue == name && passwordValue == password){
+					document.getElementById("user").innerHTML = name;
+					$("#login").fadeOut("slow");
+					$("#home").fadeIn(3000);
+				}
+			}
+		}
+	}
+
+	xmlhttp.open("GET","users.json",true);
+	xmlhttp.overrideMimeType("application/json");
+	xmlhttp.send();
+	return false;
+}
+
+var clearHistory = function(){
+	document.getElementById("rank").innerHTML = "";
+	localStorage.removeItem("historyRank");
+}
+
+
+var openCredit = function(){
+	$("#home").fadeOut("slow");
+	$("#creditPage").fadeIn(3000);
+}
+
+var playGame = function(){
+	$("#home").fadeOut("slow");
+	$("#game").fadeIn(3000);
+}
+
+var back = function(){
+	if(document.getElementById("game").style.display != "none"){
+		$("#game").fadeOut("slow");
+		stopTimer();
+		$("#home").fadeIn(3000);
+	}
+	else if(document.getElementById("creditPage").style.display != "none"){
+		$("#creditPage").fadeOut("slow");
+		$("#home").fadeIn(3000);
+	}
 }

@@ -38,7 +38,7 @@ var timer = function() {
     }
 };
 
-var myTimer = new timer();
+var timer = new timer();
 var $time;
 var clocktimer;
 
@@ -52,8 +52,8 @@ function formatTime(time) {
     var newTime = '';
     totalSec = time/1000;
     ms = time%1000;
-    m = Math.floor(totalSec/60);
     s = Math.floor(totalSec%60);
+    m = Math.floor((totalSec%3600)/60);
     newTime = digitTime(m, 2) + ':' + digitTime(s, 2) + ':' + digitTime(ms, 2);
     return newTime;
 }
@@ -64,24 +64,24 @@ function showTime() {
 }
 
 function timeUpdate() {
-    $time.innerHTML = formatTime(myTimer.time());
+    $time.innerHTML = formatTime(timer.time());
 }
 
 function startTimer() {
     clocktimer = setInterval("timeUpdate()", 0.1);
-    myTimer.start();
+    timer.start();
 }
 
 function stopTimer() {
     clearInterval(clocktimer);
-    myTimer.stop();
+    timer.stop();
     timeUpdate();
 }
 
 function pauseTimer(){
-    myTimer.save();
+    timer.save();
     clearInterval(clocktimer);
-    return myTimer.getSavedTime();
+    return timer.getSavedTime();
 }
 
 function savedToString(time){
