@@ -71,9 +71,6 @@ var loginChecker = function(){
 					$("#login").fadeOut("slow");
 					$("#home").fadeIn(3000);
 				}
-				else{
-					alert("Username dan password salah");
-				}
 			}
 		}
 	}
@@ -87,4 +84,9 @@ var loginChecker = function(){
 var clearHistory = function(){
 	document.getElementById("rank").innerHTML = "";
 	localStorage.removeItem("historyRank");
+}
+
+var playGame = function(){
+	$("#home").fadeOut("slow");
+	$("#game").fadeIn(3000);
 }

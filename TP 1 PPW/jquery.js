@@ -26,15 +26,15 @@ $(document).ready(function(){
 	}
 
 	var sortArray = function(array){
-		if(typeof array == "Object"){
+
+		if(typeof array == "object"){
 			array.sort(function(a,b){
-				return parseInt(a)-parseInt(b);
+				return parseInt(a.time)-parseInt(b.time);
 			});
 		}
 	}
 
 	var addRank = function(array){
-		console.log("add rank :" + array.length);
 		var output = "";
 		for(var i = 0; i < array.length;i++){
 			var obj = array[i];
