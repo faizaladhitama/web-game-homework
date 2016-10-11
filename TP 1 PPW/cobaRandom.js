@@ -62,13 +62,17 @@ var loginChecker = function(){
 			var userData = JSON.parse(xmlhttp.responseText);
 			var users = userData.users;
 			for(var i = 0; i < users.length;i++){
-				//console.log(users[i]);
 				var user = users[i];
 				var name = user.username;
 				var password = user.password;
 
 				if(usernameValue == name && passwordValue == password){
 					document.getElementById("user").innerHTML = name;
+					$("#login").fadeOut("slow");
+					$("#home").fadeIn(3000);
+				}
+				else{
+					alert("Username dan password salah");
 				}
 			}
 		}
@@ -77,8 +81,6 @@ var loginChecker = function(){
 	xmlhttp.open("GET","users.json",true);
 	xmlhttp.overrideMimeType("application/json");
 	xmlhttp.send();
-	$("#login").fadeOut("slow");
-	$("#game").fadeIn(3000);
 	return false;
 }
 

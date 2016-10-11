@@ -6,11 +6,12 @@ $(document).ready(function(){
 	var done = false;
 	
 	$("#login").hide();
-	$("#welcome").delay("slow").show(1000);
-	$("#welcome").delay("slow").hide(2000);
-	$("#project").delay("slow").show(4000);
-	$("#transitionScreen").delay(6000).hide(9000);
-	$("#login").delay(6000).show(9000);
+	$("#welcome").delay("slow").fadeIn(3000);
+	$("#welcome").delay("slow").fadeOut(1000);
+	$("#project").delay(3000).fadeIn(3000);
+	$("#project").delay("slow").fadeOut(2000);
+	$("#transitionScreen").delay(9000).fadeOut(2000);
+	$("#login").delay(9000).fadeIn(2000);
 	function UserRecord(username,time){
 		this.username = username;
 		this.time = time;
