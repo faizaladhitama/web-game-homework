@@ -1,6 +1,6 @@
-/*Sumber
-Copyright (c) 2010-2015 Giulia Alfonsi <electric.g@gmail.com>
+/*Sumber Kode:
 https://gist.github.com/electricg/4372563
+Copyright (c) 2010-2015 Giulia Alfonsi <electric.g@gmail.com>
 */
 var timer = function() {
     
@@ -44,9 +44,9 @@ var timer = function() {
 
 
 
-/*Sumber
-Copyright (c) 2010-2015 Giulia Alfonsi <electric.g@gmail.com>
+/*Sumber Kode:
 https://gist.github.com/electricg/4372563
+Copyright (c) 2010-2015 Giulia Alfonsi <electric.g@gmail.com>
 */
 var timer = new timer();
 var $time;

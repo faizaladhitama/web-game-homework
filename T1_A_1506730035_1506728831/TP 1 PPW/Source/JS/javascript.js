@@ -163,6 +163,7 @@ var playGame = function(){
 
 var back = function(){
 	if(document.getElementById("game").style.display != "none"){
+		loadSleeve();
 		$("#game").fadeOut("slow");
 		stopTimer();
 		$("#home").fadeIn(3000);
