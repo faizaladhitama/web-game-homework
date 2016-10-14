@@ -3,50 +3,57 @@
 	<head>
 		<meta charset ="UTF-8">
 		<title>index</title>
-		<link href="tpStyle.css" rel="stylesheet" type="text/css">
+		<link href="Source/CSS/tpStyle.css" rel="stylesheet" type="text/css">
 		<script src ="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" ></script>
-		<script type = "text/JavaScript" src = "jquery.js"></script>
-		<script type = "text/JavaScript" src = "stopwatch.js"></script>
-		<script type = "text/JavaScript" src = "javascript.js"></script>
+		<script type = "text/JavaScript" src = "Source/JS/jquery.js"></script>
+		<script type = "text/JavaScript" src = "Source/JS/stopwatch.js"></script>
+		<script type = "text/JavaScript" src = "Source/JS/javascript.js"></script>
 	</head>
 	<body onload="loadSleeve();showTime();">
+		<div id="header">
+			<h1 style="display:none">GUESTPIC GAMES</h1>
+		</div>
 		<div id="transitionScreen">
 			<div id="welcome">
 				FAIZAL &amp; RADIT PROJECT
 			</div>
 			<div id="project" style="display:none">
-				AYO TEBAK GAMBAR !!
+				GUESTPIC GAMES
 			</div>
 		</div>
 		<div id="login" style="display:none">
 			<div class="loginBox">
 				<p class="loginProp">Username : </p>
-				<input id="username" class="loginProp" type="text" name="username"></input>
+				<input id="username" class="loginInput loginProp" type="text" name="username">
 				<br/>
 				<p class="loginProp">Password  : </p>
-				<input id="password" class="loginProp" type="password" name="password"></input>
+				<input id="password" class="loginInput loginProp" type="password" name="password">
 				<button class="loginButton" onclick="loginChecker()">Login</button>
 			</div>
 		</div>
 		<div id="home" style="display:none">
+			<h1>Main Menu</h1>
 			<div id="buttonHome">
-				<button id="playGame" onclick="playGame();">Play Game</button>
-				<button id="credit" onclick="openCredit()">Credit</button>
+				<button id="playGame" class="buttonHover" onclick="playGame();">Play Game</button>
+				<br><br><br>
+				<button id="credit" class="buttonHover" onclick="openCredit()">Credit</button>
 			</div>
 		</div>
 		<div id="game" style="display:none">
-			<button id="backButton" onclick="back();">Back</button>
-			<h1>Guess the right pict !</h1>
+			<button class="backButton" onclick="back();">Back</button>
 			<div class="frame">
 				<div id="flex-container">
 				</div>
 			</div>
-			<div class="timer">
-				<div>Username : <span id="user"></span></div>
-				<div>Time: <span id="time"></span></div>
-			</div>
-			<div class="start">
-				<input id="gameStart" type="button" value="start">
+			<div class="userBox">
+				<div class="timer">
+					<h2>User's Time</h2>
+					<div>Username : <span id="user"></span></div>
+					<div>Time: <span id="time"></span></div>
+				</div>
+				<div class="start">
+					<input id="gameStart" type="button" value="start">
+				</div>
 			</div>
 			<div class="rankBoard">
 				<h3>Rank Board</h3>
@@ -56,9 +63,10 @@
 			</div>
 		</div>
 		<div id="creditPage">
-			<button id="backButton" onclick="back();">Back</button>
-			<p>Website ini dibuat untuk tugas PPW 2.</p>
+			<button class="backButton" onclick="back();">Back</button>
+			<p>Game ini dibuat untuk tugas PPW 1.</p>
 			<p>Oleh Faizal dan Raditya </p>
+			<p>Terima Kasih Dosen dan Asdos PPW atas ilmu yang diberikan</p>
 		</div>
 	</body>
 </html>
