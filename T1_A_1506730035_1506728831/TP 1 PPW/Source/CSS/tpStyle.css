@@ -17,7 +17,6 @@ h1{
 
 #transitionScreen{
 	color:white;
-	background-color:none;
 	width:750px;
 	height:200px;
 	margin:auto;
@@ -181,9 +180,7 @@ h1{
 }
 
 #flex-container {
-    display: -webkit-flex;
     display: flex;
-    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     padding : 20px;
     width: 500px;
