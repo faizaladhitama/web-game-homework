@@ -1,0 +1,247 @@
+body{
+	background-image: url("../Images/BACKGROUND/background_game.jpg");
+	background-size: 100%;
+	font-family: "Comic Sans MS";
+	background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow:hidden;
+}
+
+button{
+	font-family: "Comic Sans MS";
+}
+
+h1{
+	text-align: center;
+}
+
+#transitionScreen{
+	color:white;
+	background-color:none;
+	width:750px;
+	height:200px;
+	margin:auto;
+	position:relative;
+	top:30px;
+	left:-5px;
+}
+
+#welcome, #project{
+	font-family:verdana;
+	font-size:90px;
+	text-align:center;
+	position:relative;
+	top:180px;
+}
+
+#home h1{
+	position:relative;
+	top:15px;
+	font-size:50px;
+}
+
+#login{
+	position:absolute;
+	margin:auto;
+	width:400px;
+	height:300px;
+	background-color:#FFD700;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	z-index:1;
+	border-radius: 5px;
+}
+
+.loginBox{
+	margin:auto;
+	position:relative;
+	top:15%;
+	background-color:black;
+	color: white;
+	width:250px;
+	height: 150px;
+	padding:30px;
+	border-radius: 10px;
+}
+
+.loginInput{
+	width: 90%;
+}
+
+.loginProp{
+	padding:5px;
+	margin:2px;
+	border-radius:5px;
+	display:inline;
+}
+
+.loginProp #password{
+	display:block;
+}
+
+.loginButton{
+	position:relative;
+	top: 15px;
+	left:170px;
+	background-color:#FFD700;
+	cursor: pointer;
+	border:none;
+	padding:6px 16px;
+	color:#000;
+	text-align:center;
+}
+
+#home{
+	width:400px;
+	height:500px;
+	background-color: #6495ED;
+	margin:auto;
+	position:absolute;
+	top:55%;
+	left:50%;
+	border-top: 2px;
+	border-bottom: 2px;
+	border-color: black;
+	transform:translate(-50%,-50%);
+	border-radius: 10%;
+}
+
+#buttonHome{
+	position:absolute;
+	left:100px;
+	top:150px;
+}
+
+#game .backButton{
+	position:absolute;
+	padding: 20px 20px;
+	width:200px;
+	top:200px;
+	left:130px;
+}
+
+#playGame, #credit{
+	width:200px;
+	height:80px;
+	display:block;
+	background-color :grey;
+	color: white;
+	font-size: 30px;
+	border: none;
+	cursor: pointer;
+}
+
+#playGame:hover{
+	background-color: #FFD700;
+	color: black;
+}
+
+#credit:hover{
+	background-color: #FFD700;
+	color: black;
+}
+
+#creditPage{
+	width:200px;
+	height:80px;
+	display:none;
+	color: white;
+}
+
+#clear{
+	position:relative;
+	top:40px;
+	width:120px;
+	padding:10px 10px;
+	margin-bottom:40px;
+}
+
+#gameStart{
+	position:relative;
+	top:20px;
+	width:140px;
+	padding:10px 10px;
+}
+
+#gameButton{
+	border: none;
+    padding: 20px 35px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.frame{
+	margin:auto;
+	width:500px;
+	height:500px;
+}
+
+#flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding : 20px;
+    width: 500px;
+    height:500px;
+    background-image: url("../Images/BACKGROUND/background-home.jpg");
+    border-radius: 10%;
+    position:absolute;
+    top:140px;
+}
+
+.close{
+	background-image:url("cardSleeve.png");
+}
+
+.open{
+	background-image:url("senyum.jpg");
+}
+
+img{
+	background-position:center;
+	background-size:cover;
+    width: 105px;
+    height: 105px;
+    margin: 10px;
+    border-radius: 10%;
+}
+
+p{
+	white-space:pre;
+}
+
+.rankBoard{
+	color: white;
+	position:absolute;
+	display:block;
+	width:200px;
+	text-align:center;
+	float:right;
+	top:28%;
+	left:78%;
+	background-color: #6495ED;
+	padding: 20px;
+}
+
+.userBox{
+	position: absolute;
+	float: left;
+	left: 130px;
+	top: 300px;
+	background-color: #6495ED;
+	color: white;
+	padding: 30px;
+	height:200px;
+}
+
+#header h1{
+	position:relative;
+	font-size:80px;
+	top:-50px;
+	color:#8B4513;
+}
