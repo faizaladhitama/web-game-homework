@@ -163,10 +163,10 @@ var playGame = function(){
 
 var back = function(){
 	if(document.getElementById("game").style.display != "none"){
-		loadSleeve();
 		$("#game").fadeOut("slow");
 		stopTimer();
-		$("#home").fadeIn(3000);
+		$("#home").delay("slow").fadeIn(3000);
+		loadSleeve();
 	}
 	else if(document.getElementById("creditPage").style.display != "none"){
 		$("#creditPage").fadeOut("slow");
