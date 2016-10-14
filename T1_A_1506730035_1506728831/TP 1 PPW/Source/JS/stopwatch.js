@@ -1,6 +1,7 @@
 /*Sumber Kode:
 https://gist.github.com/electricg/4372563
 Copyright (c) 2010-2015 Giulia Alfonsi <electric.g@gmail.com>
+Kode diambil sebagian dari website tersebut
 */
 var timer = function() {
     
@@ -47,6 +48,7 @@ var timer = function() {
 /*Sumber Kode:
 https://gist.github.com/electricg/4372563
 Copyright (c) 2010-2015 Giulia Alfonsi <electric.g@gmail.com>
+Kode diambil sebagian dari website tersebut
 */
 var timer = new timer();
 var $time;
@@ -57,7 +59,7 @@ var digitTime = function(angka, digit) {
     return stringWaktu.substr(stringWaktu.length-digit);
 }
 
-var formatTime = function (time) {
+var timeToString = function (time) {
     var h = m = s = ms = totalSec = 0;
     var newTime = "";
     totalSec = time/1000;
@@ -74,7 +76,7 @@ var showTime = function() {
 }
 
 var timeUpdate = function() {
-    $time.innerHTML = formatTime(timer.time());
+    $time.innerHTML = timeToString(timer.time());
 }
 
 var startTimer = function() {
@@ -95,5 +97,11 @@ var pauseTimer = function(){
 }
 
 var savedToString = function(time){
-    return formatTime(time);
+    return timeToString(time);
 }
+
+/*Sumber Kode:
+https://gist.github.com/electricg/4372563
+Copyright (c) 2010-2015 Giulia Alfonsi <electric.g@gmail.com>
+Kode diambil sebagian dari website tersebut
+*/
